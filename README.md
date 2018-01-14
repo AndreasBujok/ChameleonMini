@@ -51,8 +51,10 @@ __Table of content__
 - [AUTOCALIBRATE](#autocalibrate)
 - [FIELD](#field)
 
-##VERSION<a id="version">
-[Top](#top)
+VERSION<a id="version">
+----
+^[Top](#top)
+
 
 Print the current version of ChameleonMini<br>
 
@@ -60,8 +62,9 @@ Print the current version of ChameleonMini<br>
 *101:OK WITH TEXT<br>
 ChameleonMini RevG 171107 using LUFA 151115 compiled with AVR-GCC 4.9.2. Based on the open-source NFC tool ChameleonMini. https://github.com/emsec/ChameleonMini commit 33f3525*
 
-##CONFIG<a id="config">
-[Top](#top)
+CONFIG<a id="config">
+----
+^[Top](#top)
 
 Get/Set the configuratopn of the current slot. The "slot" includes the behavior of the Card. The ChameleonMini can emulate differend Cards, and each slot contains one Card.
 The slot 8 is configured as "READER" in the default configuration.<br>
@@ -81,8 +84,9 @@ Get the value of the current slot<br>
 MF\_CLASSIC\_4K<br>*
 
 
-##UID<a id="uid"></a>##
-[Top](#top)
+UID<a id="uid"></a>
+----
+^[Top](#top)
 
 Print the current uid of the emulated card(slot)<br>
 **Syntax:** `uid?`<br>
@@ -90,7 +94,7 @@ Print the current uid of the emulated card(slot)<br>
 9E63BC03A<br>*
 
 
-##READONLY<a id="readonly"></a>##
+READONLY<a id="readonly"></a>
 
 Configures the read-only mode to the internal memory. Activates (1) or deactivates (0) the read-only mode (***Any writing to the memory is silently ignored.***)<br>
 
@@ -109,40 +113,46 @@ Activate the read-only mode<br>
 *100:OK<br>*
 
 
-##UPLOAD<a id="upload"></a>##
-[Top](#top)
+UPLOAD<a id="upload"></a>
+----
+^[Top](#top)
 
 **Syntax:** `upload`\<ENTER\><br>
 
 Waits for an XModem connection in order to upload a new virtualized card into the currently selected slot, with a size up to the current memory size. 
 
 
-##DOWNLOAD<a id="download"></a>##
-[Top](#top)
+DOWNLOAD<a id="download"></a>
+----
+^[Top](#top)
+
 
 **Syntax:** `download`\<ENTER\><br>
 
 Waits for an XModem connection in order to download a virtualized card with the current memory size.
 
 
-##RESET<a id="reset"></a>##
-[Top](#top)
+RESET<a id="reset"></a>
+----
+^[Top](#top)
 
 **Syntax:** `reset`\<ENTER\><br>
 
 Reboots the Chameleon, i.e., power down and subsequent power-up. Note: A reset usually requires a new Terminal session. 
 
 
-##UPGRADE<a id="upgrade"></a>##
-[Top](#top)
+UPGRADE<a id="upgrade"></a>
+----
+^[Top](#top)
 
 Sets the Chameleon into firmware upgrade mode (DFU). This command can be used instead of holding the RBUTTON while power-on to trigger the bootloader. 
 
 **Syntax:** `upgrade`\<ENTER\><br>
 
 
-##MEMSIZE<a id="memsize"></a>##
-[Top](#top)
+MEMSIZE<a id="memsize"></a>
+----
+^[Top](#top)
 
 Returns the memory size occupied by the current configuration in Byte
 
@@ -150,8 +160,10 @@ Returns the memory size occupied by the current configuration in Byte
 *101:OK WITH TEXT<br>
 4096<br>*
 
-##UIDSIZE<a id="uidsize"></a>##
-[Top](#top)
+
+UIDSIZE<a id="uidsize"></a>
+----
+^[Top](#top)
 
 Print the size in bytes of the current uid on the emulated card<br>
 **Syntax:** `uidsize?`<br>
@@ -159,8 +171,9 @@ Print the size in bytes of the current uid on the emulated card<br>
 4<br>*
 
 
-##CHARGING<a id="charging"></a>
-[Top](#top)
+CHARGING<a id="charging"></a>
+----
+^[Top](#top)
 
 Returns if the battery is currently being charged (TRUE) or not (FALSE) 
 
@@ -168,9 +181,9 @@ Returns if the battery is currently being charged (TRUE) or not (FALSE)
 *120:FALSE*
 
 
-
-##HELP<a id="help"></a>
-[Top](#top)
+HELP<a id="help"></a>
+----
+^[Top](#top)
 
 Returns a comma-separated list of all commands supported by the current firmware
 
@@ -179,8 +192,9 @@ Returns a comma-separated list of all commands supported by the current firmware
 VERSION,CONFIG,UID,READONLY,UPL....*
 
 
-##RSSI<a id="rssi"></a>
-[Top](#top)
+RSSI<a id="rssi"></a>
+----
+^[Top](#top)
 
 Returns the voltage measured at the antenna of the Chameleon, e.g., to detect the presence of an RF field or compare the field strength of different RFID readers
 
@@ -188,8 +202,9 @@ Returns the voltage measured at the antenna of the Chameleon, e.g., to detect th
 *101:OK WITH TEXT<br>
 2648 mV*
 
-##SYSTICK<a id="systick"></a>##
-[Top](#top)
+SYSTICK<a id="systick"></a>
+----
+^[Top](#top)
 
 Print the value of the left system tick **in ms** since PowerOn.<br>
 *Note: An overflow occurs every 65,536 ms.*<br>
@@ -198,8 +213,9 @@ Print the value of the left system tick **in ms** since PowerOn.<br>
 *101:OK WITH TEXT<br>
 9C30<br>*
 
-##LEDGREEN<a id="ledgreen"></a>##
-[Top](#top)
+LEDGREEN<a id="ledgreen"></a>
+----
+^[Top](#top)
 
 Possible values are:<br>
 **Syntax:** `ledgreen=?`<br>
@@ -215,8 +231,9 @@ Set value for example:<br>
 **Syntax:** `ledgreen=terminal_rxtx`\<ENTER\><br>
 *100:OK*
 
-##LEDRED<a id="ledred"></a>##
-[Top](#top)
+LEDRED<a id="ledred"></a>
+----
+^[Top](#top)
 
 Possible values are:<br>
 **Syntax:** `ledred=?`<br>
@@ -233,8 +250,9 @@ Set value for example:<br>
 *100:OK*
 
 
-##RBUTTON<a id="rbutton"></a>##
-[Top](#top)
+RBUTTON<a id="rbutton"></a>
+----
+^[Top](#top)
 
 Set/Get the behavior of a right button with "short push"<br>
 
@@ -252,8 +270,9 @@ Set value for example:<br>
 **Syntax:** `rbutton=ui_random`
 
 
-##RBUTTON\_LONG<a id="rbutton_long"></a>##
-[Top](#top)
+RBUTTON\_LONG<a id="rbutton_long"></a>
+----
+^[Top](#top)
 
 Set/Get the behavior of a right button with "long push"<br>
 
@@ -271,8 +290,9 @@ Set value for example:<br>
 **Syntax:** `rbutton_long=uid_random`<br>
 *100:OK*
 
-##LBUTTON<a id="lbutton"></a>##
-[Top](#top)
+LBUTTON<a id="lbutton"></a>
+----
+^[Top](#top)
 
 Set/Get the behavior of a left button with "short push"<br>
 
@@ -290,8 +310,9 @@ Set value for example:<br>
 **Syntax:** `lbutton=uid_random`<br>
 *100:OK*
 
-##LBUTTON\_LONG<a id="lbutton_long"></a>##
-[Top](#top)
+LBUTTON\_LONG<a id="lbutton_long"></a>
+----
+^[Top](#top)
 
 Set/Get the behavior of a left button with "long push"<br>
 
@@ -310,8 +331,9 @@ Set value for example:<br>
 *100:OK*
 
 
-##LOGMODE<a id="logmode"></a>##
-[Top](#top)
+LOGMODE<a id="logmode"></a>
+----
+^[Top](#top)
 
 The 'logmode' command set the behavior of the datalogging.<br>
  
@@ -342,8 +364,9 @@ The log entries use a TLV (Type Length Value)-like format:
 - **Data** -> Data length bytes, it's also possible that no data is appended, then the Data length field is zero
 
 
-##LOGMEM<a id="logmem"></a>##
-[Top](#top)
+LOGMEM<a id="logmem"></a>
+----
+^[Top](#top)
 
 Returns the remaining free space for logging data to the SRAM (max. 2048 byte)
 
@@ -352,16 +375,18 @@ Returns the remaining free space for logging data to the SRAM (max. 2048 byte)
 18430 (from which 16382 non-volatile)*
 
 
-##LOGDOWNLOAD<a id="logdownload"></a>##
-[Top](#top)
+LOGDOWNLOAD<a id="logdownload"></a>
+----
+^[Top](#top)
 
 Waits for an XModem connection and then downloads the binary log - including any log data in FRAM. 
 
 **Syntax:** `logdownload`\<ENTER\><br>
 
 
-##LOGSTORE<a id="logstore"></a>##
-[Top](#top)
+LOGSTORE<a id="logstore"></a>
+----
+^[Top](#top)
 
 Writes the current log from SRAM to FRAM and clears the SRAM log. 
 
@@ -373,16 +398,18 @@ If the FRAM is full, currently no error message is shown.<br>
 If calling `LOGMEM?` after executing this command returns any other value than the maximum SRAM log size, there was not sufficient space in the FRAM and nothing has been done. 
 
 
-##LOGCLEAR<a id="logclear"></a>##
-[Top](#top)
+LOGCLEAR<a id="logclear"></a>
+----
+^[Top](#top)
 
 Clears the log memory (SRAM on ATMega and FRAM on external RAM IC5) 
 
 **Syntax:** `logclear`<ENTER\><br>
 *100:OK<br>*
 
-##SETTING<a id="setting"></a>##
-[Top](#top)
+SETTING<a id="setting"></a>
+----
+^[Top](#top)
 
 Get/Set the current slot (slot 1-8) for the card/reader emulation.
 
@@ -395,16 +422,18 @@ Switch to slot 2<br>
 **Syntax:** `setting=2`<br> 
 *100:OK*
 
-##CLEAR<a id="clear"></a>##
-[Top](#top)
+CLEAR<a id="clear"></a>
+----
+^[Top](#top)
 
 Clears the content of the current slot
 
 **Syntax:** `clear`\<ENTER\><br>
 *100:OK<br>*
 
-##STORE<a id="store"></a>##
-[Top](#top)
+STORE<a id="store"></a>
+----
+^[Top](#top)
 
 Stores the content of the current slot from the external FRAM into the Flash memory
 
@@ -412,8 +441,9 @@ Stores the content of the current slot from the external FRAM into the Flash mem
 *100:OK*
 
 
-##RECALL<a id="recall"></a>##
-[Top](#top)
+RECALL<a id="recall"></a>
+----
+^[Top](#top)
 
 Recalls/restores the content of the current slot from the Flash memory into the external FRAM 
 
@@ -421,8 +451,9 @@ Recalls/restores the content of the current slot from the Flash memory into the 
 *100:OK*
 
 
-##SEND\_RAW<a id="send_raw"></a>##
-[Top](#top)
+SEND\_RAW<a id="send_raw"></a>
+----
+^[Top](#top)
 
 Adds parity bits, sends the given byte string <BYTEVALUE>, and returns the cards answer 
 
@@ -440,8 +471,10 @@ BA46A1B2EF<br>
 0028<br>
 PARITY OK<br>*
 
-##SEND<a id="send"></a>##
-[Top](#top)
+
+SEND<a id="send"></a>
+----
+^[Top](#top)
 
 Does NOT add parity bits, sends the given byte string <BYTEVALUE> and returns the cards answer
 
@@ -452,8 +485,9 @@ Does NOT add parity bits, sends the given byte string <BYTEVALUE> and returns th
 PARITY OK*<br>
 
 
-##GETUID<a id="getuid"></a>##
-[Top](#top)
+GETUID<a id="getuid"></a>
+----
+^[Top](#top)
 
 Obtains the UID of a card that is in the range of the antenna and returns it. This command is a Timeout command.<br>
 
@@ -464,7 +498,7 @@ Obtains the UID of a card that is in the range of the antenna and returns it. Th
 BA46A1B2*
 
 
-##DUMP\_MFU<a id="dump_mfu"></a>##
+DUMP\_MFU<a id="dump_mfu"></a>
 [Top](#top)
 
 Reads the whole content of a Mifare Ultralight card that is in the range of the antenna and returns it. This command is a Timeout command
@@ -479,8 +513,9 @@ FFFFFFFF000000000000000000000000<br>
 00000000000000000000000000000000<br>*
 
 
-##IDENTIFY<a id="identify"></a>##
-[Top](#top)
+IDENTIFY<a id="identify"></a>
+----
+^[Top](#top)
 
 dentifies the type of a card in the range of the antenna and returns it. This command is a Timeout command.
 
@@ -493,8 +528,9 @@ ATQA:.0400<br>
 UID:.BA46A1B2<br>
 SAK: 08<br>**
 
-##TIMEOUT<a id="timeout"></a>##
-[Top](#top)
+TIMEOUT<a id="timeout"></a>
+----
+^[Top](#top)
 
 Get/Set the timeout for the current slot in multiples of 128 ms. If set to zero, there is no timeout. See also Timeout commands. 
 
@@ -510,8 +546,9 @@ Get the current value<br>
 5000 ms<br>*
 
 
-##THRESHOLD<a id="threshold"></a>##
-[Top](#top)
+THRESHOLD<a id="threshold"></a>
+----
+^[Top](#top)
 
 Get/Set the possible number for the reader threshold.
 
@@ -526,8 +563,9 @@ Set the reader threshold. The *\<NUMBER\>* influences the reader function and ra
 **Syntax:** `threshold=300`\<ENTER\><br>
 *100:OK*
 
-##AUTOCALIBRATE<a id="autocalibrate"></a>##
-[Top](#top)
+AUTOCALIBRATE<a id="autocalibrate"></a>
+----
+^[Top](#top)
 
 Automatically finds a good threshold for communicating with the card that currently is on top of the Chameleon. This command is a Timeout command
 
@@ -546,8 +584,9 @@ Automatically finds a good threshold for communicating with the card that curren
 1016: -<br>*
 
 
-##FIELD<a id="field"></a>##
-[Top](#top)
+FIELD<a id="field"></a>
+----
+^[Top](#top)
 
 Get/Set the state of the reader field
 
