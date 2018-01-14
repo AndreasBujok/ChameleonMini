@@ -51,7 +51,7 @@ __Table of content__
 - [AUTOCALIBRATE](#autocalibrate)
 - [FIELD](#field)
 
-##VERSION<a id="version">##
+##VERSION<a id="version">
 [Top](#top)
 
 Print the current version of ChameleonMini<br>
@@ -60,7 +60,7 @@ Print the current version of ChameleonMini<br>
 *101:OK WITH TEXT<br>
 ChameleonMini RevG 171107 using LUFA 151115 compiled with AVR-GCC 4.9.2. Based on the open-source NFC tool ChameleonMini. https://github.com/emsec/ChameleonMini commit 33f3525*
 
-##CONFIG<a id="config">##
+##CONFIG<a id="config">
 [Top](#top)
 
 Get/Set the configuratopn of the current slot. The "slot" includes the behavior of the Card. The ChameleonMini can emulate differend Cards, and each slot contains one Card.
