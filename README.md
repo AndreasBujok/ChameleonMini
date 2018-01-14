@@ -1,7 +1,7 @@
 
 # ChameleonMini Rev.G #
 
-###This is a user friendly documentation for the [ChameleonMini](#https://github.com/emsec/ChameleonMini/wiki) from Kasper & Oswald GmbH.<br>
+###This is a user friendly documentation for the [ChameleonMini](https://github.com/emsec/ChameleonMini/wiki) from Kasper & Oswald GmbH.<br>
 ###Feel free to add or adapt the documentation 
 
 
