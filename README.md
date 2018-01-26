@@ -1,7 +1,11 @@
 
 # ChameleonMini Rev.G #
 
-###This is a user friendly documentation for the [ChameleonMini](https://github.com/emsec/ChameleonMini/wiki) from Kasper & Oswald GmbH.<br>
+
+(https://camo.githubusercontent.com/303b6c2cd63051979122eab76620be41e294ad29/68747470733a2f2f7261772e6769746875622e636f6d2f77696b692f656d7365632f4368616d656c656f6e4d696e692f496d616765732f526576472d746f702e4a5047)
+
+
+###This is a user friendly documentation for the [ChameleonMini](https://github.com/emsec/ChameleonMini/wiki)  (RevG 180125) from Kasper & Oswald GmbH.<br>
 ###Feel free to add or adapt the documentation 
 
 
@@ -50,6 +54,7 @@ __Table of content__
 - [THRESHOLD](#threshold)
 - [AUTOCALIBRATE](#autocalibrate)
 - [FIELD](#field)
+- [CLONE](#clone)
 
 VERSION<a id="version">
 ----
@@ -60,7 +65,7 @@ Print the current version of ChameleonMini<br>
 
 **Syntax:** `version?`<br>
 *101:OK WITH TEXT<br>
-ChameleonMini RevG 171107 using LUFA 151115 compiled with AVR-GCC 4.9.2. Based on the open-source NFC tool ChameleonMini. https://github.com/emsec/ChameleonMini commit 33f3525*
+ChameleonMini RevG 180125 using LUFA 151115 compiled with AVR-GCC 5.4.0. Based on the open-source NFC tool ChameleonMini. https://github.com/emsec/ChameleonMini commit c6d2968*
 
 CONFIG<a id="config">
 ----
@@ -72,7 +77,7 @@ The slot 8 is configured as "READER" in the default configuration.<br>
 
 **Syntax:** `config=?`<br>
 *101:OK WITH TEXT
-NONE,MF\_ULTRALIGHT,MF\_CLASSIC\_1K,MF\_CLASSIC\_1K\_7B,MF\_CLASSIC\_4K,MF\_CLASSIC\_4K\_7B,ISO14443A\_SNIFF,ISO14443A\_READER*
+NONE,MF\_ULTRALIGHT,MF\_ULTRALIGHT|_EV1\_80B,MF\_ULTRALIGHT|_EV1\_164B,MF\_CLASSIC\_1K,MF\_CLASSIC\_1K\_7B,MF\_CLASSIC\_4K,MF\_CLASSIC\_4K\_7B,ISO14443A\_SNIFF,ISO14443A\_READER*
 
 Set current slot as a MIFARE classic 4K emulation.<br>
 **Syntax:** `config=MF_CLASSIC_4K`<br>
@@ -145,7 +150,11 @@ UPGRADE<a id="upgrade"></a>
 ----
 ^[Top](#top)
 
-Sets the Chameleon into firmware upgrade mode (DFU). This command can be used instead of holding the RBUTTON while power-on to trigger the bootloader. 
+Sets the Chameleon into firmware upgrade mode (DFU). This command can be used instead of holding the RBUTTON while power-on to trigger the bootloader.<br>
+
+After run the `upgrade` command, you can now start the upgrade process by running the "ChameleonFirmwareUpgrade.bat" batch (Windows) or other options, depend on your OS.
+
+See **Step 2: Upgrade the Firmware ** [Getting-Started](https://github.com/emsec/ChameleonMini/wiki/Getting-Started)
 
 **Syntax:** `upgrade`\<ENTER\><br>
 
@@ -259,7 +268,7 @@ Set/Get the behavior of a right button with "short push"<br>
 Possible values are:<br>
 **Syntax:** `rbutton=?`<br>
 *101:OK WITH TEXT<br>
-NONE,UID_RANDOM,UID\_LEFT\_INCREMENT,UID\_RIGHT\_INCREMENT,UID\_LEFT\_DECREMENT,UID\_RIGHT\_DECREMENT,CYCLE\_SETTINGS,STORE\_MEM,RECALL\_MEM,TOGGLE\_FIELD,STORE\_LOG*
+NONE,UID_RANDOM,UID\_LEFT\_INCREMENT,UID\_RIGHT\_INCREMENT,UID\_LEFT\_DECREMENT,UID\_RIGHT\_DECREMENT,CYCLE\_SETTINGS,STORE\_MEM,RECALL\_MEM,TOGGLE\_FIELD,STORE\_LOG,CLONE*
 
 Get current value:<br>
 **Syntax:** `rbutton?`<br>
@@ -278,8 +287,8 @@ Set/Get the behavior of a right button with "long push"<br>
 
 Possible values are:<br>
 **Syntax:** `rbutton_long=?`<br>
-101:OK WITH TEXT<br>
-NONE,UID_RANDOM,UID\_LEFT\_INCREMENT,UID\_RIGHT\_INCREMENT,UID\_LEFT\_DECREMENT,UID\_RIGHT\_DECREMENT,CYCLE\_SETTINGS,STORE\_MEM,RECALL\_MEM,TOGGLE\_FIELD,STORE\_LOG
+*101:OK WITH TEXT<br>
+NONE,UID_RANDOM,UID\_LEFT\_INCREMENT,UID\_RIGHT\_INCREMENT,UID\_LEFT\_DECREMENT,UID\_RIGHT\_DECREMENT,CYCLE\_SETTINGS,STORE\_MEM,RECALL\_MEM,TOGGLE\_FIELD,STORE\_LOG,CLONE*
 
 Get current value:<br>
 **Syntax:** `rbuttton_long?`<br>
@@ -299,7 +308,7 @@ Set/Get the behavior of a left button with "short push"<br>
 Possible values are:<br>
 **Syntax:** `lbutton_long=?`<br>
 *101:OK WITH TEXT<br>
-NONE,UID_RANDOM,UID\_LEFT\_INCREMENT,UID\_RIGHT\_INCREMENT,UID\_LEFT\_DECREMENT,UID\_RIGHT\_DECREMENT,CYCLE\_SETTINGS,STORE\_MEM,RECALL\_MEM,TOGGLE\_FIELD,STORE\_LOG*
+NONE,UID_RANDOM,UID\_LEFT\_INCREMENT,UID\_RIGHT\_INCREMENT,UID\_LEFT\_DECREMENT,UID\_RIGHT\_DECREMENT,CYCLE\_SETTINGS,STORE\_MEM,RECALL\_MEM,TOGGLE\_FIELD,STORE\_LOG,CLONE*
 
 Get current value:<br>
 **Syntax:** `lbutton?`<br>
@@ -319,7 +328,7 @@ Set/Get the behavior of a left button with "long push"<br>
 Possible values are:<br>
 **Syntax:** `lbutton_long=?`<br>
 *101:OK WITH TEXT<br>
-NONE,UID_RANDOM,UID\_LEFT\_INCREMENT,UID\_RIGHT\_INCREMENT,UID\_LEFT\_DECREMENT,UID\_RIGHT\_DECREMENT,CYCLE\_SETTINGS,STORE\_MEM,RECALL\_MEM,TOGGLE\_FIELD,STORE\_LOG*
+NONE,UID_RANDOM,UID\_LEFT\_INCREMENT,UID\_RIGHT\_INCREMENT,UID\_LEFT\_DECREMENT,UID\_RIGHT\_DECREMENT,CYCLE\_SETTINGS,STORE\_MEM,RECALL\_MEM,TOGGLE\_FIELD,STORE\_LOG,CLONE*
 
 Get current value:<br>
 **Syntax:** `lbuttton_long?`<br>
@@ -499,6 +508,7 @@ BA46A1B2*
 
 
 DUMP\_MFU<a id="dump_mfu"></a>
+----
 [Top](#top)
 
 Reads the whole content of a Mifare Ultralight card that is in the range of the antenna and returns it. This command is a Timeout command
@@ -598,4 +608,18 @@ Get the possible values<br>
 Switch the reader field on<br>
 **Syntax:** `field=1`<br>
 *100:OK*
+
+
+CLONE<a id="clone"></a>
+----
+^[Top](#top)
+
+Change `config` and `uid` to the identified card (mifare classic 1k/4k or ultralight).
+To check the progress, you can set the mod of the LEDs to *FIELD\_DETECTED* (`ledred=field_detected`) 
+
+
+**Syntax:** `clone`\<ENTER\><br>
+Hold then the card to be clone on the readers field.
+
+[CR165](https://github.com/emsec/ChameleonMini/issues/165)
 
