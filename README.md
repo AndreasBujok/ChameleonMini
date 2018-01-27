@@ -631,7 +631,7 @@ Hold then the card to be clone on the readers field.
 See [ISSUE #165](https://github.com/emsec/ChameleonMini/issues/165)
 
 
-How to customize the Firmware<id="customize"></a>
+How to customize the Firmware<a id="customize"></a>
 ----
 
 The asiest way is to setup a toolchain with UBUNTU (Physical or as VM). This example use UBUNTU as a VirtualBox VM.<br>
