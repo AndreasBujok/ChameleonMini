@@ -2,7 +2,8 @@
 # ChameleonMini Rev.G #
 
 
-(https://camo.githubusercontent.com/303b6c2cd63051979122eab76620be41e294ad29/68747470733a2f2f7261772e6769746875622e636f6d2f77696b692f656d7365632f4368616d656c656f6e4d696e692f496d616765732f526576472d746f702e4a5047)
+![alt text](chameleonmini.jpg "ChameleonMini")<br>
+
 
 
 ###This is a user friendly documentation for the [ChameleonMini](https://github.com/emsec/ChameleonMini/wiki)  (RevG 180125) from Kasper & Oswald GmbH.<br>
@@ -12,7 +13,6 @@
 
 
 <a id="top">
-
 
 __Table of content__
 
@@ -636,7 +636,7 @@ How to customize the Firmware<a id="customize"></a>
 
 The asiest way is to setup a toolchain with UBUNTU (Physical or as VM). This example use UBUNTU as a VirtualBox VM.<br>
 
-1. Download the [UBUNTU Desktop] (https://www.ubuntu.com/download/desktop) as ISO (i used the Ubuntu 16.04.3 LTS) and create a VM.
+1. Download the [UBUNTU Desktop](https://www.ubuntu.com/download/desktop) as ISO (i used the Ubuntu 16.04.3 LTS) and create a VM.
 
  ![alt text](VBox_UBUNTU.png "VirtualBox UBUNTU VM")
 
