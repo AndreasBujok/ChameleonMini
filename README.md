@@ -56,12 +56,15 @@ __Table of content__
 - [FIELD](#field)
 - [CLONE](#clone)
 
+
+- [How to customize the Firmware](customize)
+
 VERSION<a id="version">
 ----
 ^[Top](#top)
 
 
-Print the current version of ChameleonMini<br>
+Print the current version of ChameleonMini.<br>
 
 **Syntax:** `version?`<br>
 *101:OK WITH TEXT<br>
@@ -93,7 +96,7 @@ UID<a id="uid"></a>
 ----
 ^[Top](#top)
 
-Print the current uid of the emulated card(slot)<br>
+Print the current uid of the emulated card(slot).<br>
 **Syntax:** `uid?`<br>
 *101:OK WITH TEXT<br>
 9E63BC03A<br>*
@@ -122,28 +125,26 @@ UPLOAD<a id="upload"></a>
 ----
 ^[Top](#top)
 
-**Syntax:** `upload`\<ENTER\><br>
-
 Waits for an XModem connection in order to upload a new virtualized card into the currently selected slot, with a size up to the current memory size. 
 
+**Syntax:** `upload`\<ENTER\><br>
 
 DOWNLOAD<a id="download"></a>
 ----
 ^[Top](#top)
 
+Waits for an XModem connection in order to download a virtualized card with the current memory size.
 
 **Syntax:** `download`\<ENTER\><br>
-
-Waits for an XModem connection in order to download a virtualized card with the current memory size.
 
 
 RESET<a id="reset"></a>
 ----
 ^[Top](#top)
 
-**Syntax:** `reset`\<ENTER\><br>
-
 Reboots the Chameleon, i.e., power down and subsequent power-up. Note: A reset usually requires a new Terminal session. 
+
+**Syntax:** `reset`\<ENTER\><br>
 
 
 UPGRADE<a id="upgrade"></a>
@@ -152,9 +153,7 @@ UPGRADE<a id="upgrade"></a>
 
 Sets the Chameleon into firmware upgrade mode (DFU). This command can be used instead of holding the RBUTTON while power-on to trigger the bootloader.<br>
 
-After run the `upgrade` command, you can now start the upgrade process by running the "ChameleonFirmwareUpgrade.bat" batch (Windows) or other options, depend on your OS.
-
-See **Step 2: Upgrade the Firmware ** [Getting-Started](https://github.com/emsec/ChameleonMini/wiki/Getting-Started)
+After run the `upgrade` command, you can now start the upgrade process described on [Getting Started](https://rawgit.com/emsec/ChameleonMini/master/Doc/Doxygen/html/_page__getting_started.html)
 
 **Syntax:** `upgrade`\<ENTER\><br>
 
@@ -163,7 +162,7 @@ MEMSIZE<a id="memsize"></a>
 ----
 ^[Top](#top)
 
-Returns the memory size occupied by the current configuration in Byte
+Returns the memory size occupied by the current configuration in Byte.
 
 **Syntax:** `memsize?`<br>
 *101:OK WITH TEXT<br>
@@ -174,7 +173,8 @@ UIDSIZE<a id="uidsize"></a>
 ----
 ^[Top](#top)
 
-Print the size in bytes of the current uid on the emulated card<br>
+Print the size in bytes of the current uid on the emulated card.<br>
+
 **Syntax:** `uidsize?`<br>
 *101:OK WITH TEXT<br>
 4<br>*
@@ -184,7 +184,7 @@ CHARGING<a id="charging"></a>
 ----
 ^[Top](#top)
 
-Returns if the battery is currently being charged (TRUE) or not (FALSE) 
+Returns if the battery is currently being charged (TRUE) or not (FALSE).
 
 **Syntax:** `charging?`<br>
 *120:FALSE*
@@ -194,7 +194,7 @@ HELP<a id="help"></a>
 ----
 ^[Top](#top)
 
-Returns a comma-separated list of all commands supported by the current firmware
+Returns a comma-separated list of all commands supported by the current firmware.
 
 **Syntax:** `help`<br>
 *101:OK WITH TEXT<br>
@@ -205,7 +205,7 @@ RSSI<a id="rssi"></a>
 ----
 ^[Top](#top)
 
-Returns the voltage measured at the antenna of the Chameleon, e.g., to detect the presence of an RF field or compare the field strength of different RFID readers
+Returns the voltage measured at the antenna of the Chameleon, e.g., to detect the presence of an RF field or compare the field strength of different RFID readers.
 
 **Syntax:** `help`\<ENTER\><br>
 *101:OK WITH TEXT<br>
@@ -226,6 +226,8 @@ LEDGREEN<a id="ledgreen"></a>
 ----
 ^[Top](#top)
 
+Set/Get the behavior of the green LED.
+
 Possible values are:<br>
 **Syntax:** `ledgreen=?`<br>
 *101:OK WITH TEXT<br>
@@ -243,6 +245,8 @@ Set value for example:<br>
 LEDRED<a id="ledred"></a>
 ----
 ^[Top](#top)
+
+Set/Get the behavior of the red LED.
 
 Possible values are:<br>
 **Syntax:** `ledred=?`<br>
@@ -263,7 +267,7 @@ RBUTTON<a id="rbutton"></a>
 ----
 ^[Top](#top)
 
-Set/Get the behavior of a right button with "short push"<br>
+Set/Get the behavior of a right button with "short push".<br>
 
 Possible values are:<br>
 **Syntax:** `rbutton=?`<br>
@@ -283,7 +287,7 @@ RBUTTON\_LONG<a id="rbutton_long"></a>
 ----
 ^[Top](#top)
 
-Set/Get the behavior of a right button with "long push"<br>
+Set/Get the behavior of a right button with "long push".<br>
 
 Possible values are:<br>
 **Syntax:** `rbutton_long=?`<br>
@@ -303,9 +307,10 @@ LBUTTON<a id="lbutton"></a>
 ----
 ^[Top](#top)
 
-Set/Get the behavior of a left button with "short push"<br>
+Set/Get the behavior of a left button with "short push".<br>
 
 Possible values are:<br>
+
 **Syntax:** `lbutton_long=?`<br>
 *101:OK WITH TEXT<br>
 NONE,UID_RANDOM,UID\_LEFT\_INCREMENT,UID\_RIGHT\_INCREMENT,UID\_LEFT\_DECREMENT,UID\_RIGHT\_DECREMENT,CYCLE\_SETTINGS,STORE\_MEM,RECALL\_MEM,TOGGLE\_FIELD,STORE\_LOG,CLONE*
@@ -323,7 +328,7 @@ LBUTTON\_LONG<a id="lbutton_long"></a>
 ----
 ^[Top](#top)
 
-Set/Get the behavior of a left button with "long push"<br>
+Set/Get the behavior of a left button with "long push".<br>
 
 Possible values are:<br>
 **Syntax:** `lbutton_long=?`<br>
@@ -377,7 +382,7 @@ LOGMEM<a id="logmem"></a>
 ----
 ^[Top](#top)
 
-Returns the remaining free space for logging data to the SRAM (max. 2048 byte)
+Returns the remaining free space for logging data to the SRAM (max. 2048 byte).
 
 **Syntax:** `logmem?`<br>
 *101:OK WITH TEXT<br>
@@ -435,7 +440,7 @@ CLEAR<a id="clear"></a>
 ----
 ^[Top](#top)
 
-Clears the content of the current slot
+Clears the content of the current slot.
 
 **Syntax:** `clear`\<ENTER\><br>
 *100:OK<br>*
@@ -444,7 +449,7 @@ STORE<a id="store"></a>
 ----
 ^[Top](#top)
 
-Stores the content of the current slot from the external FRAM into the Flash memory
+Stores the content of the current slot from the external FRAM into the Flash memory.
 
 **Syntax:** `store`\<ENTER\><br>
 *100:OK*
@@ -454,7 +459,7 @@ RECALL<a id="recall"></a>
 ----
 ^[Top](#top)
 
-Recalls/restores the content of the current slot from the Flash memory into the external FRAM 
+Recalls/restores the content of the current slot from the Flash memory into the external FRAM.
 
 **Syntax:** `recall`\<ENTER\><br>
 *100:OK*
@@ -464,7 +469,7 @@ SEND\_RAW<a id="send_raw"></a>
 ----
 ^[Top](#top)
 
-Adds parity bits, sends the given byte string <BYTEVALUE>, and returns the cards answer 
+Adds parity bits, sends the given byte string <BYTEVALUE>, and returns the cards answer.
 
 Request type A<br>
 **Syntax:** `send 26`\<ENTER\><br>
@@ -485,7 +490,7 @@ SEND<a id="send"></a>
 ----
 ^[Top](#top)
 
-Does NOT add parity bits, sends the given byte string <BYTEVALUE> and returns the cards answer
+Does NOT add parity bits, sends the given byte string <BYTEVALUE> and returns the cards answer.
 
 **Syntax:** `send 26`\<ENTER\><br>
 *101:OK WITH TEXT<br>
@@ -511,7 +516,7 @@ DUMP\_MFU<a id="dump_mfu"></a>
 ----
 [Top](#top)
 
-Reads the whole content of a Mifare Ultralight card that is in the range of the antenna and returns it. This command is a Timeout command
+Reads the whole content of a Mifare Ultralight card that is in the range of the antenna and returns it. This command is a Timeout command.
 
 **Valid only in 'ISO14443A\_READER' mode**
 
@@ -527,16 +532,16 @@ IDENTIFY<a id="identify"></a>
 ----
 ^[Top](#top)
 
-dentifies the type of a card in the range of the antenna and returns it. This command is a Timeout command.
+Identifies the type of a card in the range of the antenna and returns it. This command is a Timeout command.
 
-**Valid only in 'ISO14443A\_READER' mode**
+**Valid only in 'ISO14443A\_READER' mode** (`config=iso14443a_reader`)
 
 **Syntax:** `identify`\<ENTER\><br>
 *101:OK WITH TEXT<br>
 MIFARE Classic 1k<br>
 ATQA:.0400<br>
 UID:.BA46A1B2<br>
-SAK: 08<br>**
+SAK: 08<br>*
 
 TIMEOUT<a id="timeout"></a>
 ----
@@ -577,7 +582,7 @@ AUTOCALIBRATE<a id="autocalibrate"></a>
 ----
 ^[Top](#top)
 
-Automatically finds a good threshold for communicating with the card that currently is on top of the Chameleon. This command is a Timeout command
+Automatically finds a good threshold for communicating with the card that currently is on top of the Chameleon. This command is a Timeout command.
 
 **Valid only in 'ISO14443A\_READER' mode**
 
@@ -598,7 +603,7 @@ FIELD<a id="field"></a>
 ----
 ^[Top](#top)
 
-Get/Set the state of the reader field
+Get/Set the state of the reader field.
 
 Get the possible values<br>
 **Syntax:** `field=?`<br>
@@ -617,9 +622,88 @@ CLONE<a id="clone"></a>
 Change `config` and `uid` to the identified card (mifare classic 1k/4k or ultralight).
 To check the progress, you can set the mod of the LEDs to *FIELD\_DETECTED* (`ledred=field_detected`) 
 
+(*In fact, it's not a really full clone of a card. It will be clone the Card-ID and switch the ChameleonMini in to the same cardtype as the "master". Nevertheless, this is enough to make penetration tests to low level systems, based only of Card-ID and/or Card-Type.*)
+
 
 **Syntax:** `clone`\<ENTER\><br>
 Hold then the card to be clone on the readers field.
 
-[CR165](https://github.com/emsec/ChameleonMini/issues/165)
+See [ISSUE #165](https://github.com/emsec/ChameleonMini/issues/165)
 
+
+How to customize the Firmware<id="customize"></a>
+----
+
+The asiest way is to setup a toolchain with UBUNTU (Physical or as VM). This example use UBUNTU as a VirtualBox VM.<br>
+
+1. Download the [UBUNTU Desktop] (https://www.ubuntu.com/download/desktop) as ISO (i used the Ubuntu 16.04.3 LTS) and create a VM.
+
+ ![alt text](VBox_UBUNTU.png "VirtualBox UBUNTU VM")
+
+2. Install the [The AVR GCC Toolchain](http://avr-eclipse.sourceforge.net/wiki/index.php/The_AVR_GCC_Toolchain):
+
+    **Syntax:** `sudo apt-get install gcc-avr binutils-avr gdb-avr avr-libc avrdude`\<ENTER\><br>
+
+3. Install [git](https://git-scm.com) ([HowTo](https://www.liquidweb.com/kb/install-git-ubuntu-16-04-lts)\):
+    
+   **Syntax:** `apt-get update`\<ENTER\><br>
+   **Syntax:** `apt-get install git-core`\<ENTER\><br>
+   
+4. Clone the ChameleonMini repo to local machine.
+   
+   - create a target directory like '~git' **Syntax:** `mkdir ~/git`\<ENTER\><br>
+   - change into the new drectory: **Syntax:** `cd ~/git`\<ENTER\><br>
+   - clone the original repository to the current directory:<br>
+     **Syntax:** `git clone https://github.com/emsec/ChameleonMini.git`\<ENTER\><br>
+
+5. For remote access to the VM install [ssh](http://ubuntuhandbook.org/index.php/2016/04/enable-ssh-ubuntu-16-04-lts)
+
+   **Syntax:** `sudo apt-get install openssh-server`\<ENTER\><br>
+   
+6. Edit the ChameleonMini source files:
+
+   After cloning the git repository, you will find the firmwarefiles under `~/git/ChameleonMini/Firmware/Chameleon-Mini`
+   
+7. Compile the changes
+
+   **Syntax:** `make`\<ENTER\><br>
+   `../LUFA/Build/lufa_build.mk:131: The XMEGA device support is currently EXPERIMENTAL (incomplete and/or non-functional), and is included for preview purposes only.`
+ `[INFO]    : Begin compilation of project "Chameleon-Mini"...`<br>
+` `<br>
+`avr-gcc (GCC) 4.9.2`<br>
+*`Copyright (C) 2014 Free Software Foundation, Inc.`<br>
+`This is free software; see the source for copying conditions.  There is NO`<br>
+`warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.`<br>
+` `<br>
+` [OBJCPY]  : Extracting HEX file data from "Chameleon-Mini.elf"`br>
+`avr-objcopy -O ihex -R .eeprom -R .fuse -R .lock -R .signature --set-section-flags=.flashdata="alloc,load" Chameleon-Mini.elf Chameleon-Mini.hex`<br>
+` [OBJCPY]  : Extracting EEP file data from "Chameleon-Mini.elf"`<br>
+`mavr-objcopy -O ihex -j .eeprom --set-section-flags=.eeprom="alloc,load" --change-section-lma .eeprom=0 --no-change-warnings Chameleon-Mini.elf Chameleon-Mini.eep || exit 0`<br>
+` [SIZE]    : Determining size of "Chameleon-Mini.elf"`<br>
+` `<br>
+`avr-size --mcu=atxmega128a4u --format=avr Chameleon-Mini.elf`<br>
+`AVR Memory Usage`<br>
+`----------------`<br>
+`Device: atxmega128a4u`<br>
+` `<br>
+`Program:   49218 bytes (35.3% Full)`<br>
+`(.text + .data + .bootloader)`<br>
+` `<br>
+`Data:       5537 bytes (67.6% Full)`<br>
+`(.data + .bss + .noinit)`<br>
+` `<br>
+`EEPROM:      100 bytes (4.9% Full)`<br>
+`(.eeprom)`<br>
+` `<br>
+` `<br>
+` [INFO]    : Finished building project "Chameleon-Mini".`*<br>
+
+  Now, you will get the needed two compiled files `Chameleon-Mini.eep` and `Chameleon-Mini.hex`.
+
+8. Upgrade the Firmware
+
+   Start the upgrade process descripted on [Getting Started](https://rawgit.com/emsec/ChameleonMini/master/Doc/Doxygen/html/_page__getting_started.html) with both compiled files `Chameleon-Mini.eep` and `Chameleon-Mini.hex`.   
+    
+  That's it. Now, you have your own code :-)
+
+   
