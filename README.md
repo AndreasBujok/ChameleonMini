@@ -57,7 +57,7 @@ __Table of content__
 - [CLONE](#clone)
 
 
-- [How to customize the Firmware](customize)
+- [How to customize the Firmware](#customize)
 
 VERSION<a id="version">
 ----
