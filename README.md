@@ -56,8 +56,20 @@ __Table of content__
 - [FIELD](#field)
 - [CLONE](#clone)
 
-
+Annex
+----
+- [Abbreviation](#abbr)
+- [MIFARE Classic command overview](#mfc_commands)
+- [MIFARE Classic ACK and NAK](#acknak)
+- [ATQA and SAK responses](#atqasak)
 - [How to customize the Firmware](#customize)
+
+
+----
+
+
+
+
 
 VERSION<a id="version">
 ----
@@ -629,6 +641,77 @@ To check the progress, you can set the mod of the LEDs to *FIELD\_DETECTED* (`le
 Hold then the card to be clone on the readers field.
 
 See [ISSUE #165](https://github.com/emsec/ChameleonMini/issues/165)
+
+
+Annex
+----
+
+Abbreviation<a id="abbr"></a>
+----
+
+| |Description|
+|---|---|
+|**PICC**|Proximity Integrated Circuit Card (MIFARE Card)|
+|**PCD**|proximity coupling device (Cardreader)|
+
+MIFARE Classic command overview<a id="mfc_commands"></a>
+----
+
+[NXP Datasheet 4K](https://www.nxp.com/docs/en/data-sheet/MF1S70YYX_V1.pdf)
+
+
+|Command|ISO/IEC 14443|Command code (hexadecimal)|
+|---|---|---|
+|Request|REQA|26h (7 bit)|
+|Wake-up|WUPA|52h (7 bit)|
+|Anticollision CL1|Anticollision CL1|93h 20h|
+|Select CL1|Select CL1|93h 70h|
+|Anticollision CL2|Anticollision CL2|95h 20h|
+|Select CL2|Select CL2|95h 70h|
+|Halt|Halt|50h 00h|
+|Authentication with Key A|-|60h|
+|Authentication with Key B|-|61h|
+|Personalize UID Usage|-|40h|
+|SET\_MOD\_TYPE|-|43h|
+|MIFARE Read|-|30h|
+|MIFARE Write|-|A0h|
+|MIFARE Decrement|-|C0h|
+|MIFARE Increment|-|C1h|
+|MIFARE Restore|-|C2h|
+|MIFARE Transfer|-|B0h
+
+
+MIFARE Classic ACK and NAK<a id="acknak"></a>
+----
+
+|Code (4-bit)|Transfer Buffer Validity|Description|
+|---|---|---|
+|Ah||Acknowledge (ACK)|
+|0h|valid|invalid operation|
+|1h|valid|parity or CRC error|
+|4h|invalid|invalid operation|
+|5h|invalid|parity or CRC error|
+
+
+
+ATQA and SAK responses<a id="atqasak"></a>
+----
+
+**ATQA response of the MF1S70yyX/V1**
+
+|Sales Type|Hex Value|
+|---|---|
+|MF1S00yX|00 44h|
+|MF1S03yX|00 04h|
+|MF1S700yX|00 42h|
+|MF1S703yX|00 02h|
+
+
+**SAK response of the MF1S70yyX/V1**
+
+|Sales Type|Hex Value|
+|---|---|
+|MF1S70yyX/V1|18h|
 
 
 How to customize the Firmware<a id="customize"></a>
