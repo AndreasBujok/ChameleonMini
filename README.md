@@ -652,7 +652,16 @@ Abbreviation<a id="abbr"></a>
 | |Description|
 |---|---|
 |**PICC**|Proximity Integrated Circuit Card (MIFARE Card)|
-|**PCD**|proximity coupling device (Cardreader)|
+|**PCD**|Proximity Coupling Device (Cardreader)|
+|**ACK**|ACKnowledge|
+|**NAK**|Not AcKnowledge|
+|**ATQA**|Answer To reQuest, Type A||**NUID**|Non-Unique IDentifier|
+|**REQA**|REQuest command, Type A|
+|**SAK**|Select AcKnowledge, type A|
+|**UID**|Unique IDentifier|
+|**WUPA**|Wake-Up Protocol type A|
+
+
 
 MIFARE Classic command overview<a id="mfc_commands"></a>
 ----
